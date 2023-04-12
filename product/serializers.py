@@ -64,8 +64,3 @@ class ReviewValidateSerializer(serializers.Serializer):
         except Product.DoesNotExist:
             raise ValidationError(f'Product with id ({product_id}) not found!')
         return product_id
-
-
-
-
-
