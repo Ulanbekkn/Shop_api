@@ -11,16 +11,17 @@ from django.contrib.auth.models import User
 
 @api_view(['POST'])
 def authentication_api_view(request):
-    serializer = UserLoginValidateSerializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-    user = authenticate(**serializer.validated_data)
-
-    if user:
-        token, created = Token.objects.get_or_create(user=user)
-        return Response(data={'key': token.key})
-
-    return Response(status=status.HTTP_401_UNAUTHORIZED,
-                    data={'error': 'Username or Password wrong!'})
+    query   
+    # serializer = UserLoginValidateSerializer(data=request.data)
+    # serializer.is_valid(raise_exception=True)
+    # user = authenticate(**serializer.validated_data)
+    #
+    # if user:
+    #     token, created = Token.objects.get_or_create(user=user)
+    #     return Response(data={'key': token.key})
+    #
+    # return Response(status=status.HTTP_401_UNAUTHORIZED,
+    #                 data={'error': 'Username or Password wrong!'})
 
 
 @api_view(['POST'])
